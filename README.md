@@ -2,6 +2,12 @@
 
 A Flutter plugin that checks if a specific package (app) is installed on an Android device.
 
+## Installation
+
+```
+flutter pub add package_install_checker
+```
+
 ## Usage
 
 ### Android
