@@ -8,7 +8,8 @@ abstract class PackageInstallCheckerPlatform extends PlatformInterface {
 
   static final Object _token = Object();
 
-  static PackageInstallCheckerPlatform _instance = MethodChannelPackageInstallChecker();
+  static PackageInstallCheckerPlatform _instance =
+      MethodChannelPackageInstallChecker();
 
   /// The default instance of [PackageInstallCheckerPlatform] to use.
   ///
@@ -25,5 +26,9 @@ abstract class PackageInstallCheckerPlatform extends PlatformInterface {
 
   Future<String?> getPlatformVersion() {
     throw UnimplementedError('platformVersion() has not been implemented.');
+  }
+
+  Future<bool> isPackageInstalled(String packageName) {
+    throw UnimplementedError('isPackageInstalled() has not been implemented.');
   }
 }

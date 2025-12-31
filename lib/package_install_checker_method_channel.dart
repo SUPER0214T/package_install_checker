@@ -11,7 +11,23 @@ class MethodChannelPackageInstallChecker extends PackageInstallCheckerPlatform {
 
   @override
   Future<String?> getPlatformVersion() async {
-    final version = await methodChannel.invokeMethod<String>('getPlatformVersion');
+    final version = await methodChannel.invokeMethod<String>(
+      'getPlatformVersion',
+    );
     return version;
+  }
+
+  @override
+  Future<bool> isPackageInstalled(String packageName) async {
+    try {
+      final result = await methodChannel.invokeMethod<bool>(
+        'isPackageInstalled',
+        {'packageName': packageName},
+      );
+      return result ?? false;
+    } on PlatformException catch (e) {
+      debugPrint('Error checking package installation: ${e.message}');
+      return false;
+    }
   }
 }
