@@ -1,7 +1,9 @@
 name: package_install_checker
 description: "A Flutter plugin that checks if a specific package (app) is installed on an Android device."
 version: 0.0.1
-homepage:
+homepage: "https://github.com/SUPER0214T/package_install_checker"
+publisher: "twinjyjh2@gmail.com"
+repository: "https://github.com/SUPER0214T/package_install_checker"
 
 environment:
   sdk: ^3.9.2
