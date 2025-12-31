@@ -1,15 +1,31 @@
-# package_install_checker
+# Package Install Checker
 
-A new Flutter plugin project.
+A Flutter plugin that checks if a specific package (app) is installed on an Android device.
 
-## Getting Started
+## Usage
 
-This project is a starting point for a Flutter
-[plug-in package](https://flutter.dev/to/develop-plugins),
-a specialized package that includes platform-specific implementation code for
-Android and/or iOS.
+### Android
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```xml
+<!-- write queries -->
+<intent>
+    <action android:name="android.intent.action.MAIN" />
+    <category android:name="android.intent.category.LAUNCHER" />
+</intent>
+```
 
+```dart
+import 'package:package_install_checker/package_install_checker.dart';
+
+// Check if a specific package is installed
+bool isInstalled = await PackageInstallChecker.isPackageInstalled('com.android.chrome');
+```
+
+### Supported Platforms
+
+- ✅ Android
+- ❌ iOS (not currently supported)
+
+## License
+
+This project is distributed under the license terms.
