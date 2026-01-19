@@ -2,6 +2,12 @@
 
 A Flutter plugin that checks if a specific package (app) is installed on an Android device.
 
+
+## Supported Platforms
+
+- ✅ Android
+- ❌ iOS (not currently supported)
+
 ## Installation
 
 ```
@@ -12,12 +18,15 @@ flutter pub add package_install_checker
 
 ### Android
 
+Add the following `<queries>` element to your `AndroidManifest.xml` file:
+
 ```xml
-<!-- write queries -->
-<intent>
-    <action android:name="android.intent.action.MAIN" />
-    <category android:name="android.intent.category.LAUNCHER" />
-</intent>
+<queries>
+    <intent>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+    </intent>
+</queries>
 ```
 
 ```dart
@@ -27,10 +36,9 @@ import 'package:package_install_checker/package_install_checker.dart';
 bool isInstalled = await PackageInstallChecker.isPackageInstalled('com.android.chrome');
 ```
 
-### Supported Platforms
+## Notes
 
-- ✅ Android
-- ❌ iOS (not currently supported)
+- This package does not use the `QUERY_ALL_PACKAGES` permission, which can cause rejection during Play Store review.
 
 ## License
 
